@@ -19,8 +19,9 @@ public class ChatListener implements Listener{
 	@EventHandler (priority = EventPriority.LOW)
 	public void playerChat(AsyncPlayerChatEvent e)
 	{
-		if(e.getPlayer().getName().equals("Kherr"))
+		if(e.getPlayer().getName().equals("10102")) // we only want to stalk kherr.
 		{
+			System.out.println("twas me!");
 			String msg = e.getMessage().toLowerCase();
 			
 			if(msg.contains("pf") && msg.contains("ha")) // The start of both 2 words. there is definitely no "pfft hah" without them
@@ -41,6 +42,7 @@ public class ChatListener implements Listener{
 				 * */
 				
 				
+				//////////////////////OLD CODE/////////////////////////////////
 				/*Trim message down to start of the potential "pfft!!!"
 				msg = msg.substring(msg.indexOf("pf"), msg.length());
 				int firstSpace = msg.indexOf(" ");
@@ -74,12 +76,10 @@ public class ChatListener implements Listener{
 						
 						if(this.getCharAfterLastInstanceOf(msg, 'a', 0) == 'h') // Contains "Hah"!!
 						{
-							//TODO thingy. Increment kherr's pfft hah count
+							myPlugin.incrementKherrCount();
 						}
 					}
-				}
-				
-				
+				}					
 			}
 		}
 	}
@@ -88,12 +88,11 @@ public class ChatListener implements Listener{
 	{
 		if(message.charAt(index) == instance)
 		{
-			return getCharAfterLastInstanceOf(message,instance,index++); // We must go deeper!
+			return getCharAfterLastInstanceOf(message,instance,index+1); // We must go deeper!
 		} else
 		{
 			return message.charAt(index);
-		}
-		
+		}		
 	}
 	
 

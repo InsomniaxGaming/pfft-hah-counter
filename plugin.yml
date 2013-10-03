@@ -1,0 +1,10 @@
+name: "Kherr Counter"
+version: 1.0
+main: me.insom.pffthah.core.PfftHah
+description: "Track the amount of times Kherr says 'Pfffft hah!'"
+
+commands:
+  kherrcounter:
+    description: "retrieve number of times kherr has said 'pfft >hah'"
+    usage: "/kherrcounter"
+    aliases: [kc]

@@ -21,7 +21,7 @@ public class ChatListener implements Listener{
 	{
 		if(e.getPlayer().getName().equals("Kherr"))
 		{
-			String msg = e.getMessage();
+			String msg = e.getMessage().toLowerCase();
 			
 			if(msg.contains("pf") && msg.contains("ha")) // The start of both 2 words. there is definitely no "pfft hah" without them
 			{
@@ -41,7 +41,7 @@ public class ChatListener implements Listener{
 				 * */
 				
 				
-				//Trim message down to start of the potential "pfft!!!"
+				/*Trim message down to start of the potential "pfft!!!"
 				msg = msg.substring(msg.indexOf("pf"), msg.length());
 				int firstSpace = msg.indexOf(" ");
 				
@@ -62,9 +62,39 @@ public class ChatListener implements Listener{
 							}
 						}
 					}
+				}*/
+				
+				if(msg.indexOf("pf") < msg.indexOf("ha")) // Very quick check that pfft and hah are in the right order. This still means words can be in between the two
+				{
+					msg = msg.substring(msg.indexOf("pf") + 1); // Trim down to the start of Kherr's F rampage
+					
+					if(this.getCharAfterLastInstanceOf(msg, 'f', 0) == 't') // contains "pfft"!!!!
+					{
+						msg = msg.substring(msg.indexOf("ha") +1); // Trim down to the start of Kherr's terrifying bombardment of H's
+						
+						if(this.getCharAfterLastInstanceOf(msg, 'a', 0) == 'h') // Contains "Hah"!!
+						{
+							//TODO thingy. Increment kherr's pfft hah count
+						}
+					}
 				}
+				
+				
 			}
 		}
 	}
+	
+	public char getCharAfterLastInstanceOf(String message, char instance, int index)
+	{
+		if(message.charAt(index) == instance)
+		{
+			return getCharAfterLastInstanceOf(message,instance,index++); // We must go deeper!
+		} else
+		{
+			return message.charAt(index);
+		}
+		
+	}
+	
 
 }

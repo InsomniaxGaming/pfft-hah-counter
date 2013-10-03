@@ -5,6 +5,6 @@ description: "Track the amount of times Kherr says 'Pfffft hah!'"
 
 commands:
   kherrcounter:
-    description: "retrieve number of times kherr has said 'pfft >hah'"
+    description: "retrieve number of times kherr has said 'pfft hah'"
     usage: "/kherrcounter"
     aliases: [kc]

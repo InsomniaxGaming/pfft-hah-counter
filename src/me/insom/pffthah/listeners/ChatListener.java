@@ -19,9 +19,8 @@ public class ChatListener implements Listener{
 	@EventHandler (priority = EventPriority.LOW)
 	public void playerChat(AsyncPlayerChatEvent e)
 	{
-		if(e.getPlayer().getName().equals("10102")) // we only want to stalk kherr.
+		if(e.getPlayer().getName().equals("Kherr")) // we only want to stalk kherr.
 		{
-			System.out.println("twas me!");
 			String msg = e.getMessage().toLowerCase();
 			
 			if(msg.contains("pf") && msg.contains("ha")) // The start of both 2 words. there is definitely no "pfft hah" without them

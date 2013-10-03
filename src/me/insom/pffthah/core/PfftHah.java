@@ -20,7 +20,8 @@ public class PfftHah extends JavaPlugin{
 		{
 			if(cmd.getName().equalsIgnoreCase("kherrcounter"))
 			{
-				sender.sendMessage("Kherr has said \"Pfffft, hah!\" " + this.getKherrCount() + " times");
+				sender.sendMessage("Kherr has said \"Pfffft, hah!\" " + this.getKherrCount() + " times on " + this.getServer().getName());
+				sender.sendMessage("Kherr's record for longest \"pfft\": " + this.getKherrLongestPfft());
 			}
 		}
 		return false;

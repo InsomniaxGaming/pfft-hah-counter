@@ -32,38 +32,6 @@ public class ChatListener implements Listener{
 				 * in the message "pfft hah!". I am trying to allow for as
 				 * much variation in his message as possible. ////////////*/	
 				
-				/*
-				 * Another way of going about this would be to find "pf", 
-				 * then send it through a recursion method to constantly check each next letter for "f" and break at first non-f letter,
-				 * use the value of the first non-f character to decide if it is "pffft" or not, then do the same for "hah"
-				 * 
-				 * ... I'm starting to like that idea alot.
-				 * */
-				
-				
-				//////////////////////OLD CODE/////////////////////////////////
-				/*Trim message down to start of the potential "pfft!!!"
-				msg = msg.substring(msg.indexOf("pf"), msg.length());
-				int firstSpace = msg.indexOf(" ");
-				
-				if(firstSpace != -1)
-				{
-					if(msg.substring(0,firstSpace).endsWith("t") || msg.substring(0,firstSpace).endsWith("t,")) // Contains "pffft" (most likely...)
-					{
-						msg = msg.substring(firstSpace, msg.length()); // Trim out the "pfft"
-						if(msg.startsWith("ha"))
-						{
-							firstSpace = msg.indexOf(" ");
-							if(firstSpace != 1)
-							{
-								if(msg.substring(0,firstSpace).endsWith("h")) // *Most likely* contains "hah"
-								{
-									//TODO increment the amount of "pfft hah"'s kherr has said!
-								}
-							}
-						}
-					}
-				}*/
 				
 				if(msg.indexOf("pf") < msg.indexOf("ha")) // Very quick check that pfft and hah are in the right order. This still means words can be in between the two
 				{
@@ -93,6 +61,4 @@ public class ChatListener implements Listener{
 			return message.charAt(index);
 		}		
 	}
-	
-
 }

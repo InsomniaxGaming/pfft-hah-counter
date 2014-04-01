@@ -30,7 +30,7 @@ public class PfftHah extends JavaPlugin{
 		{
 			if(cmd.getName().equalsIgnoreCase("kherrcounter"))
 			{
-				sender.sendMessage("Kherr has said \"Pfffft, hah!\" " + this.getKherrCount() + " times on " + this.getServer().getServerName());
+				sender.sendMessage("Kherr has said \"Pfffft, hah!\" " + this.getKherrCount() + " times.");
 				//sender.sendMessage("Kherr's record for longest \"pfft\": " + this.getKherrLongestPfft()); I /may/ do this some day.
 				
 				return true;
@@ -47,17 +47,6 @@ public class PfftHah extends JavaPlugin{
 	public void incrementKherrCount()
 	{
 		config.set("kherrCount", getKherrCount()+1);
-		this.saveConfig();
-	}
-	
-	public String getKherrLongestPfft()
-	{
-		return config.getString("longestPfft");
-	}
-	
-	public void setKherrLongestPfft(String longestPfft)
-	{
-		config.set("longestPfft", longestPfft);
 	}
 
 }
